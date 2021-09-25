@@ -25,8 +25,8 @@ public class CrasherPatchingTest {
 		try {
 			File root = new File("src/test/resources/samples/crasher");
 			for (File sub : Objects.requireNonNull(root.listFiles())) {
-				//if (!sub.getName().endsWith("16.class"))
-				// 	continue;
+				if (!sub.getName().endsWith("24.class"))
+				 	continue;
 				byte[] code = Files.readAllBytes(sub.toPath());
 				// Reading with ASM fails or produces incorrect representation...
 				assertThrows(Exception.class, () -> {
